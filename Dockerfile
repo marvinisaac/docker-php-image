@@ -22,6 +22,8 @@ RUN apk add --no-cache \
   php81-openssl \
   php81-phar \
   php81-session \
+  # Add Tokenizer, required by Symfony
+  php81-tokenizer \
   php81-xml \
   php81-xmlreader \
   supervisor
