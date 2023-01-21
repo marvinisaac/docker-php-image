@@ -1,6 +1,6 @@
 ARG ALPINE_VERSION=3.17
 FROM alpine:${ALPINE_VERSION}
-LABEL Maintainer="Tim de Pater <code@trafex.nl>"
+LABEL Maintainer="Marvin Isaac"
 LABEL Description="Lightweight container with Nginx 1.22 & PHP 8.1 based on Alpine Linux."
 # Setup document root
 WORKDIR /var/www/html
@@ -20,9 +20,12 @@ RUN apk add --no-cache \
   php81-mysqli \
   php81-opcache \
   php81-openssl \
+  # Required by Doctrine
+  php81-pdo \
+  php81-pdo_mysql \
   php81-phar \
   php81-session \
-  # Add Tokenizer, required by Symfony
+  # Required by Symfony
   php81-tokenizer \
   php81-xml \
   php81-xmlreader \
